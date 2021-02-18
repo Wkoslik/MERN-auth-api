@@ -9,6 +9,8 @@ mongoose.connect(process.env.MONGODB_URI, {
     useFindAndModify: false
 })
 
+mongoose.set('returnOriginal', false)
+
 //console log on open
 mongoose.connection.once('open', () =>{
     console.log(`🔗 connected to db: ${mongoose.connection.name}`)
